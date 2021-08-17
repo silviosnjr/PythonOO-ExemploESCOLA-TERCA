@@ -1,4 +1,6 @@
-class PessoaFisica():
+from abc import ABCMeta, abstractmethod
+
+class PessoaFisica(metaclass=ABCMeta):
     def __init__(self, nome_pessoa, numero_cpf):
         self.__nome = nome_pessoa
         self.__cpf = numero_cpf
@@ -18,3 +20,7 @@ class PessoaFisica():
     @cpf.setter
     def cpf(self, novo_cpf):
         self.__cpf = novo_cpf
+
+    @abstractmethod
+    def acessaEscola(self, codigo_acesso):
+        pass
